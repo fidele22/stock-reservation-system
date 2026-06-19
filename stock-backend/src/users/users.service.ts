@@ -11,14 +11,21 @@ export class UsersService implements OnModuleInit {
   ) {}
 
   async onModuleInit() {
-    const count = await this.userRepo.count();
+    await this.seedUsers();
+  }
 
-    if (count === 0) {
-      await this.userRepo.save([
-        { name: 'Castro', email: 'castro@test.com' },
-        { name: 'hirwa', email: 'hirwa@test.com' },
-      ]);
-    }
+  private async seedUsers() {
+    const existing = await this.userRepo.find();
+
+    if (existing.length > 0) return;
+
+    const users = [
+      { name: 'Castro', email: 'castro@test.com' },
+      { name: 'Hirwa', email: 'hirwa@test.com' },
+    ];
+
+    await this.userRepo.save(users);
+    console.log('Users seeded successfully');
   }
 
   findAll() {
