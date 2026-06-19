@@ -24,20 +24,20 @@ export class ProductsService implements OnModuleInit {
       {
         name: 'Laptop',
         price: 800,
-        totalStock: 10,
-        availableStock: 10,
+        totalStock: 35,
+        availableStock: 35,
       },
       {
         name: 'Mouse',
-        price: 20,
+        price: 40,
         totalStock: 50,
         availableStock: 50,
       },
       {
         name: 'Keyboard',
         price: 45,
-        totalStock: 30,
-        availableStock: 30,
+        totalStock: 40,
+        availableStock: 40,
       },
     ];
 
