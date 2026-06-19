@@ -23,7 +23,10 @@ import { ReservationsModule } from './reservations/reservations.module';
   type: 'postgres',
   url: process.env.DATABASE_URL,
   autoLoadEntities: true,
-  synchronize: true, // ONLY for development (you can turn off later)
+  synchronize: true, 
+    ssl: {
+    rejectUnauthorized: false,
+  },
 }),
     ScheduleModule.forRoot(),
     UsersModule,
