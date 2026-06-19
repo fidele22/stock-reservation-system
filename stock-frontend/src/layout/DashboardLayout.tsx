@@ -1,6 +1,6 @@
 // src/layout/DashboardLayout.tsx
 import { Link, useLocation } from 'react-router-dom';
-import { Package, Calendar, Users, LogOut, Menu, X } from 'lucide-react';
+import { Package, Calendar, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export default function DashboardLayout({ children }: any) {

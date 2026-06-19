@@ -11,7 +11,7 @@ interface User {
 
 export default function ProductCard({ product, selectedUser, onRefresh }: any) {
   const [quantity, setQuantity] = useState(1);
-  const [inputValue, setInputValue] = useState('1'); // 👈 NEW
+  const [inputValue, setInputValue] = useState('1'); 
   const [isReserving, setIsReserving] = useState(false);
   const [users, setUsers] = useState<User[]>([]);
   const navigate = useNavigate();
@@ -46,7 +46,7 @@ export default function ProductCard({ product, selectedUser, onRefresh }: any) {
       const toast = document.createElement('div');
       toast.className =
         'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-in';
-      toast.textContent = '✅ Reservation created successfully!';
+      toast.textContent = 'Reservation created successfully!';
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 3000);
 
@@ -68,14 +68,7 @@ export default function ProductCard({ product, selectedUser, onRefresh }: any) {
 
   const isOutOfStock = product.availableStock === 0;
 
-  const formatPrice = (price: any) => {
-    const numPrice = typeof price === 'string' ? parseFloat(price) : price;
-    return isNaN(numPrice) ? '0.00' : numPrice.toFixed(2);
-  };
-
-  const displayPrice = formatPrice(product.price);
-
-  // 👇 NEW: validate when user finishes typing
+  //  NEW: validate when user finishes typing
   const handleBlur = () => {
     let val = Number(inputValue);
 

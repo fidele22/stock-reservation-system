@@ -1,7 +1,7 @@
 // src/pages/ReservationsPage.tsx
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
-import { Calendar, User, Package, CheckCircle, Clock, AlertCircle, ArrowLeft } from 'lucide-react';
+import {  User, Package, CheckCircle, Clock, AlertCircle, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface Reservation {
@@ -71,16 +71,6 @@ export default function ReservationsPage() {
   const filteredReservations = reservations.filter(
     r => filter === 'ALL' || r.status === filter
   );
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-  };
 
   if (loading) {
     return (
