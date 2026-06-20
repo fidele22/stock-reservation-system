@@ -35,7 +35,7 @@ The system allows users to view products, reserve stock, handle expiration, and 
 - Automatic stock deduction on reservation
 
 ### Expiration System
-- Reservations expire after a fixed time (e.g. 5 minutes)
+- Reservations expire after a fixed time 
 - Expired reservations restore stock automatically (cron job)
 
 ### Checkout System
@@ -61,7 +61,7 @@ The system allows users to view products, reserve stock, handle expiration, and 
 ## Assumptions
 
 - No authentication system (users are pre-seeded / selected manually)
-- Reservation timeout is fixed (5 minutes)
+- Reservation timeout is fixed (10 minutes)
 - Single stock field used for simplicity
 - System assumes trusted frontend input
 
@@ -112,3 +112,10 @@ npm run start:dev
 cd stock-frontend
 npm install
 npm run dev
+
+
+Live Demo
+
+Frontend: https://stock-reservation-system-plum.vercel.app
+
+Backend API: https://stock-reservation-system.onrender.com'
